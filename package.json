@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/jiroor/sass-foundation/issues"
   },
-  "homepage": "https://github.com/jiroor/sass-foundation"
+  "homepage": "https://github.com/jiroor/sass-foundation",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
 }
