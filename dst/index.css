@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * Eric Meyer's Reset CSS v2.0
  * http://meyerweb.com/eric/tools/css/reset/
@@ -46,3 +47,29 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+/**
+ * Normalize color stops:
+ *
+ *   - (color pos) -> (pos color)
+ *   - (color) -> (implied-pos color)
+ *
+ * nibから拝借
+ */
+/**
+ * Implicit color stop position.
+ *
+ * nibから拝借
+ */
+/**
+ * グラデーションのstart指定を変換する
+ */
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none; }
+
+body, body *, body ::before, body ::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
