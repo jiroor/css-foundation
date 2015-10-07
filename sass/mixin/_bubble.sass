@@ -1,0 +1,210 @@
+// 吹き出し三角初期化
+@mixin bubble-tail-init($before: true, $after: true)
+  @if $before and $after
+    &::before, &::after
+      content: ' '
+      width: 0
+      height: 0
+      display: block
+      position: absolute
+      border-style: solid
+
+  @else if $before and not $after
+    &::before
+      content: ' '
+      width: 0
+      height: 0
+      display: block
+      position: absolute
+      border-style: solid
+
+  @else if not $before and $after
+    &::after
+      content: ' '
+      width: 0
+      height: 0
+      display: block
+      position: absolute
+      border-style: solid
+
+
+// しっぽ本体の生成
+//
+// $direction  : 向き
+// $width      : 横幅
+// $height     : 高さ
+// $bg-color    : 背景色
+// $border-width: 線幅
+// $border-color: 線色
+// $top, $right, $bottom, $left: 位置
+// $init       : 疑似クラスを初期化するかどうか
+@mixin bubble-tail($direction, $width, $height, $bg-color, $border-width: 0, $border-color: transparent, $top: 50%, $right: 50%, $bottom: 50%, $left: 50%, $init: true)
+  // 疑似クラス初期化
+  @if $init
+    @include bubble-tail-init(true, ($border-width > 0))
+
+  // - : '-'
+  // * : 'x'
+  // / : '_'
+  $w_2    : ceil($width / 2)
+  $h_2    : ceil($height / 2)
+  $bx2    : $border-width * 2
+
+  $w-b    : $width - $border-width
+  $w-bx2  : $width - $bx2
+  $w_2-b  : $w_2 - $border-width
+
+  $h-b    : $height - $border-width
+  $h-bx2  : $height - $bx2
+
+  @if $border-width == 0
+    $border-color: $bg-color
+
+  // 下向き
+  @if $direction == bottom
+    &::before
+      border-width: $height $w_2 0 $w_2
+      border-color: $border-color transparent transparent transparent
+      bottom: -$height
+      margin-left: -$width / 2
+      left: $left
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: $h-b ceil($w-bx2 / 2) 0 ceil($w-bx2 / 2)
+        border-color: $bg-color transparent transparent transparent
+        bottom: -$h-bx2
+        margin-left: -$w_2-b
+        left: $left
+  // bottom
+
+  // 上向き
+  @else if $direction == top
+    &::before
+      border-width: 0 $w_2 $height $w_2
+      border-color: transparent transparent $border-color transparent
+      top: -$height
+      margin-left: -$width / 2
+      left: $left
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: 0 ceil($w-bx2 / 2) $h-b ceil($w-bx2 / 2)
+        border-color: transparent transparent $bg-color transparent
+        top: -$h-bx2
+        margin-left: -$w_2-b
+        left: $left
+  // top
+
+  // 右向き
+  @else if $direction == right
+    &::before
+      border-width: $h_2 0 $h_2 $width
+      border-color: transparent transparent transparent $border-color
+      right: -$width
+      margin-top: -$h_2
+      top: $top
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: ceil($h-bx2 / 2) 0 ceil($h-bx2 / 2) $w-b
+        border-color: transparent transparent transparent $bg-color
+        right: -$w-bx2
+        margin-top: ceil(-$h-bx2 / 2)
+        top: $top
+  // right
+
+  // 左向き
+  @else if $direction == left
+    &::before
+      border-width: $h_2 $width $h_2 0
+      border-color: transparent $border-color transparent transparent
+      left: -$width
+      margin-top: -$h_2
+      top: $top
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: ceil($h-bx2 / 2) $w-b ceil($h-bx2 / 2) 0
+        border-color: transparent $bg-color transparent transparent
+        left: -$w-bx2
+        margin-top: ceil(-$h-bx2 / 2)
+        top: $top
+  // left
+
+  @else if $direction == topleft
+    &::before
+      border-width: $height 0  0 $width
+      border-color: transparent transparent transparent $border-color
+      top: -$height
+      margin-left: 0
+      left: $left
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: $h-b 0 0 $w-b
+        border-color: transparent transparent transparent $bg-color
+        top: -$h-bx2
+        margin-left: $border-width
+        left: $left
+  // topleft
+
+  @else if $direction == topright
+    &::before
+      border-width: 0  0 $height  $width
+      border-color: transparent transparent $border-color transparent
+      top: -$height
+      margin-right: 0
+      right: $right
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: 0 0 $h-b $w-b
+        border-color: transparent transparent $bg-color transparent
+        top: -$h-bx2
+        margin-right: $border-width
+        right: $right
+  // topright
+
+  @else if $direction == bottomleft
+    &::before
+      border-width: $height $width 0 0
+      border-color: $border-color transparent transparent transparent
+      bottom: -$height
+      margin-left: 0
+      left: $left
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: $h-b $w-bx2 0 0
+        border-color: $bg-color transparent transparent transparent
+        bottom: -$h-bx2
+        margin-left: $border-width
+        left: $left
+  // bottomleft
+
+  @else if $direction == bottomright
+    &::before
+      border-width: 0 $width $height 0
+      border-color: transparent $border-color transparent transparent
+      bottom: -$height
+      margin-right: 0
+      right: $right
+
+    // 枠線付き
+    @if $border-width > 0
+      &::after
+        border-width: 0 $w-bx2 $h-b 0
+        border-color: transparent $bg-color transparent transparent
+        bottom: -$h-bx2
+        margin-right: $border-width
+        right: $right
+  // bottomright
+// bubble-tail
