@@ -1,0 +1,83 @@
+// _helper.sass
+
+// align
+//
+// インライン要素に対して、テキストの位置を設定する
+//
+// .c-align_l: left
+// .c-align_c: center
+// .c-align_r: right
+.c-align_l
+  text-align: left !important
+
+.c-align_c
+  text-align: center !important
+
+.c-align_r
+  text-align: right !important
+
+
+// centering
+//
+// ブロック要素に対して、位置を中央に設定する
+//
+// .c-center_block: center
+.c-center_block
+  display: block !important
+  margin-left: auto
+  margin-right: auto
+
+
+// display
+//
+// 表示を設定する(display, visibility)
+//
+// .c-display_s: block
+// .c-display_n: none, hidden
+// .c-display_h: hidden
+// .c-display_f: flex
+// .c-display_i: inline-block
+.c-display_s
+  display: block !important
+
+.c-display_n
+  display: none !important
+  visibility: hidden !important
+
+.c-display_h
+  visibility: hidden !important
+
+.c-display_f
+  @include display(box)
+
+.c-display_i
+  display: inline-block !important
+
+
+// float
+//
+// .c-pull_l: left
+// .c-pull_r: right
+// .c-pull_c: clear
+.c-pull_l
+  float: left !important
+
+.c-pull_r
+  float: right !important
+
+.c-pull_c
+  clear: both !important
+
+
+// clearfix
+//
+// floatをclearする:after疑似要素を追加する
+.c-clearfix
+  @include legacy-pie-clearfix()
+
+
+// nowrap
+//
+// テキストの折り返しを禁止して、はみ出る文字を省略して三点リーダで表示する
+.c-text_nowrap
+  @include text-nowrap()

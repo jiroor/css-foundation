@@ -85,3 +85,55 @@ body {
 
 a {
   text-decoration: none; }
+
+.c-align_l {
+  text-align: left !important; }
+
+.c-align_c {
+  text-align: center !important; }
+
+.c-align_r {
+  text-align: right !important; }
+
+.c-center_block {
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto; }
+
+.c-display_s {
+  display: block !important; }
+
+.c-display_n {
+  display: none !important;
+  visibility: hidden !important; }
+
+.c-display_h {
+  visibility: hidden !important; }
+
+.c-display_f {
+  display: -webkit-box; }
+
+.c-display_i {
+  display: inline-block !important; }
+
+.c-pull_l {
+  float: left !important; }
+
+.c-pull_r {
+  float: right !important; }
+
+.c-pull_c {
+  clear: both !important; }
+
+.c-clearfix::after {
+  content: '\0020';
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+
+.c-text_nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
