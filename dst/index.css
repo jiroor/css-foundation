@@ -194,3 +194,8 @@ a {
   display: block;
   text-decoration: none;
   text-align: center; }
+
+.c-list__item {
+  position: relative; }
+  .c-list__item > a {
+    display: block; }
