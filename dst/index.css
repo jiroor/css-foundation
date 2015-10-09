@@ -215,3 +215,23 @@ a {
   position: absolute;
   right: 0;
   top: 0; }
+
+.c-tab__menu {
+  display: -webkit-box;
+  -webkit-box-align: start;
+  box-align: start;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; }
+
+.c-tab__menu__item {
+  -webkit-box-flex: 1;
+  box-flex: 1; }
+
+.c-tab__content {
+  display: hidden; }
+
+.c-tab__content_state_show {
+  display: block; }

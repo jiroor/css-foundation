@@ -1,0 +1,41 @@
+// _tab.sass
+
+// tab
+//
+// markup:
+// <div class="c-tab">
+//   <ul class="c-tab__menu">
+//     <li class="c-tab__menu__item">
+//       <a href="tab_1" class="c-btn c-tab__menu__btn c-btn__menu__btn_state_selected">メニュー</a>
+//     </li>
+//     <li class="c-tab__menu__item">
+//       <a href="tab_2" class="c-btn c-tab__menu__btn">メニュー</a>
+//     </li>
+//   </ul>
+//
+//   <div id="tab_1" class="c-tab__content c-tab__content_state_show">
+//     コンテンツ
+//   </div>
+//   <div id="tab_2" class="c-tab__content">
+//     コンテンツ
+//   </div>
+// </div>
+.c-tab
+  position relative
+
+.c-tab__menu
+  @include display(box)
+  @include box-align(start)
+  @include box-sizing(border-box)
+  overflow: hidden
+  z-index: 1
+  position: relative
+
+.c-tab__menu__item
+  @include box-flex(1)
+
+.c-tab__content
+  display: hidden
+
+.c-tab__content_state_show
+  display: block
