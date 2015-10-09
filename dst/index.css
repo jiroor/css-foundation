@@ -185,3 +185,7 @@ a {
 .c-flex_1 {
   -webkit-box-flex: 1;
   box-flex: 1; }
+
+.c-hd {
+  display: block;
+  text-align: center; }
