@@ -117,6 +117,23 @@ $set-prefix: -webkit-, ''
   @include prefixProp(box-orient, $arg)
 
 
+// box-direction
+//
+// ボックス内の子要素のレイアウト方向を逆転させる
+// http://www.htmq.com/css3/box-direction.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include box-direction($arg)
+// ```
+//
+// $arg : normal(default), reverse, inherit
+@mixin box-direction($arg)
+  @include prefixProp(box-direction, $arg)
+
+
 // box-flex
 //
 // 伸縮ボックスの伸縮比率を指定する
