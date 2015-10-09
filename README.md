@@ -4,7 +4,7 @@ quick start SASS - sass-foundation support to create stylesheet of your project
 ## Installation
 
 ```sh
-cp dst/index.css [your project]
+cp dst/foundation.css [your project]
 ```
 
 ## Collection
