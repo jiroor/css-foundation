@@ -199,3 +199,19 @@ a {
   position: relative; }
   .c-list__item > a {
     display: block; }
+
+.c-dialog {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto; }
+
+.c-dialog__container {
+  overflow: hidden; }
+
+.c-dialog__btn-close {
+  position: absolute;
+  right: 0;
+  top: 0; }

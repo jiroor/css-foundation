@@ -1,0 +1,31 @@
+// _dialog.sass
+
+// dialog
+//
+// ダイアログのベースとなるクラス
+//
+// 横幅を指定すればセンタリングされる
+// 
+// 上からの位置固定: topを指定
+// 上下をセンタリング: top: 50% transformY(-50%)
+//
+// markup:
+// <div class="c-dialog">
+//   <div class="c-btn c-dialog__btn-close"></div>
+//   <div class="c-dialog__container">content</div>
+// </div>
+.c-dialog
+  overflow: hidden
+  position: absolute
+  left: 0
+  right: 0
+  margin-left: auto
+  margin-right: auto
+
+.c-dialog__container
+  overflow: hidden
+
+.c-dialog__btn-close
+  position: absolute
+  right: 0
+  top: 0
