@@ -235,3 +235,18 @@ a {
 
 .c-tab__content_state_show {
   display: block; }
+
+.c-pager {
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+  box-pack: justify; }
+
+.c-pager__arrow {
+  display: block; }
+
+.c-pager__num {
+  display: -webkit-box; }
+
+.c-pager__num__item {
+  display: block;
+  text-align: center; }
