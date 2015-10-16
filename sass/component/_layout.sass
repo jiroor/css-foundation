@@ -1,0 +1,25 @@
+// _layout.sass
+
+// grid
+//
+// flexと併用可
+// 親の横幅が基準になるため、marginやpaddingを指定しているとはみ出す
+// c-flex_1のがよい場合もあり
+//
+// ```
+// | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+// |              8                |       4       |
+// |       4       |       4       |       4       |
+// |            6          |           6           |
+// ```
+//
+// markup:
+// <div class="c-flex">
+//   <div class="c-grid_6"></div>
+//   <div class="c-grid_6"></div>
+// </div> 
+$grid-count: 12
+
+@for $i from 1 through $grid-count
+  .c-grid_#{$i}
+    width: #{$i / $grid-count * 100}%

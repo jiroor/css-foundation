@@ -186,6 +186,42 @@ a {
   -webkit-box-flex: 1;
   box-flex: 1; }
 
+.c-grid_1 {
+  width: 8.33333%; }
+
+.c-grid_2 {
+  width: 16.66667%; }
+
+.c-grid_3 {
+  width: 25%; }
+
+.c-grid_4 {
+  width: 33.33333%; }
+
+.c-grid_5 {
+  width: 41.66667%; }
+
+.c-grid_6 {
+  width: 50%; }
+
+.c-grid_7 {
+  width: 58.33333%; }
+
+.c-grid_8 {
+  width: 66.66667%; }
+
+.c-grid_9 {
+  width: 75%; }
+
+.c-grid_10 {
+  width: 83.33333%; }
+
+.c-grid_11 {
+  width: 91.66667%; }
+
+.c-grid_12 {
+  width: 100%; }
+
 .c-hd {
   display: block;
   text-align: center; }
