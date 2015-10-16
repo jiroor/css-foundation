@@ -7,6 +7,19 @@ quick start SASS - sass-foundation support to create stylesheet of your project
 cp dst/foundation.css [your project]
 ```
 
+or
+
+```sh
+cp dst/foundation.min.css [your project]
+```
+
+or
+
+```sh
+cp -r sass/ [your project]
+# and compile when use
+```
+
 ## Collection
 
 * [`btn`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_btn.sass)
