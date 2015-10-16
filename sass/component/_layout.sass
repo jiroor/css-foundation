@@ -23,3 +23,84 @@ $grid-count: 12
 @for $i from 1 through $grid-count
   .c-grid_#{$i}
     width: #{$i / $grid-count * 100}%
+
+
+// abs
+//
+// position: absoluteによる配置
+.c-abs
+  position: absolute !important
+
+.c-abs_mc
+  @extend .c-abs
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  margin: auto
+
+.c-abs_mc_h
+  @extend .c-abs
+  left: 0
+  right: 0
+  margin-left: auto
+  margin-right: auto
+
+.c-abs_mc_v
+  @extend .c-abs
+  top: 0
+  bottom: 0
+  margin-top: auto
+  margin-bottom: auto
+
+.c-abs_tc
+  @extend .c-abs
+  top: 50%
+  left: 50%
+  @include transform(translate(-50%, -50%))
+
+.c-abs_tc_h
+  @extend .c-abs
+  left: 50%
+  @include transform(translateX(-50%))
+
+.c-abs_tc_v
+  @extend .c-abs
+  top: 50%
+  @include transform(translateY(-50%))
+
+.c-abs_tl
+  @extend .c-abs
+  top: 0
+  left: 0
+
+.c-abs_tr
+  @extend .c-abs
+  top: 0
+  right: 0
+
+.c-abs_bl
+  @extend .c-abs
+  bottom: 0
+  left: 0
+
+.c-abs_br
+  @extend .c-abs
+  bottom: 0
+  right: 0
+
+.c-abs_t
+  @extend .c-abs
+  top: 0
+
+.c-abs_b
+  @extend .c-abs
+  bottom: 0
+
+.c-abs_l
+  @extend .c-abs
+  left: 0
+
+.c-abs_r
+  @extend .c-abs
+  right: 0
