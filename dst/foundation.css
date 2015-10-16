@@ -158,6 +158,10 @@ a {
   -webkit-box-pack: start;
   box-pack: start; }
 
+.c-flex.c-flex-pack_center {
+  -webkit-box-pack: center;
+  box-pack: center; }
+
 .c-flex.c-flex-pack_end {
   -webkit-box-pack: end;
   box-pack: end; }
@@ -169,6 +173,10 @@ a {
 .c-flex.c-flex-align_start {
   -webkit-box-align: start;
   box-align: start; }
+
+.c-flex.c-flex-align_center {
+  -webkit-box-align: center;
+  box-align: center; }
 
 .c-flex.c-flex-align_end {
   -webkit-box-align: end;
