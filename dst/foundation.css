@@ -346,6 +346,12 @@ a {
 .c-tab__content_state_show {
   display: block; }
 
+.c-fw_b {
+  font-weight: bold !important; }
+
+.c-fw_n {
+  font-weight: normal !important; }
+
 .c-pager {
   display: -webkit-box;
   -webkit-box-pack: justify;

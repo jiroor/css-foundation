@@ -31,3 +31,4 @@ cp -r sass/ [your project]
 * [`list`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_list.sass)
 * [`nav`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_nav.sass)
 * [`tab`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_tab.sass)
+* [`text`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_text.sass)
