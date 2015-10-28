@@ -1,5 +1,5 @@
-# sass-foundation
-quick start SASS - sass-foundation support to create stylesheet of your project
+# css-foundation
+quick start CSS - css-foundation support to create stylesheet of your project
 
 ## Installation
 
@@ -22,13 +22,15 @@ cp -r sass/ [your project]
 
 ## Collection
 
-* [`btn`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_btn.sass)
-* [`dialog`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_dialog.sass)
-* [`flex`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_flex.sass)
-* [`hd`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_hd.sass)
-* [`helper`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_helper.sass)
-* [`layout`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_layout.sass)
-* [`list`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_list.sass)
-* [`nav`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_nav.sass)
-* [`tab`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_tab.sass)
-* [`text`](https://github.com/jiroor/sass-foundation/blob/master/sass/component/_text.sass)
+| collection | sass | scss |
+|:----------:|:-:|:-:|
+|`btn` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_btn.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_btn.scss) |
+|`dialog` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_dialog.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_dialog.scss) |
+|`flex` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_flex.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_flex.scss) |
+|`hd` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_hd.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_hd.scss) |
+|`helper` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_helper.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_helper.scss) |
+|`layout` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_layout.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_layout.scss) |
+|`list` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_list.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_list.scss) |
+|`nav` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_nav.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_nav.scss) |
+|`tab` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_tab.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_tab.scss) |
+|`text` | [sass](https://github.com/jiroor/css-foundation/blob/master/sass/component/_text.sass) | [scss](https://github.com/jiroor/css-foundation/blob/master/scss/component/_text.scss) |

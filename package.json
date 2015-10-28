@@ -1,5 +1,5 @@
 {
-  "name": "sass-foundation",
+  "name": "css-foundation",
   "version": "0.0.1",
   "description": "quick start SASS",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jiroor/sass-foundation"
+    "url": "https://github.com/jiroor/css-foundation"
   },
   "keywords": [
     "sass",
@@ -17,9 +17,9 @@
   "author": "jiroor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jiroor/sass-foundation/issues"
+    "url": "https://github.com/jiroor/css-foundation/issues"
   },
-  "homepage": "https://github.com/jiroor/sass-foundation",
+  "homepage": "https://github.com/jiroor/css-foundation",
   "devDependencies": {
     "babel": "^5.8.23",
     "gulp": "^3.9.0",
