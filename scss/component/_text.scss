@@ -1,0 +1,14 @@
+// _text.sass
+
+// font weight
+//
+// markup:
+// <div class="c-fw_b">テキスト</div>
+// <div class="c-fw_n">テキスト</div>
+.c-fw_b {
+  font-weight: bold !important;
+}
+
+.c-fw_n {
+  font-weight: normal !important;
+}

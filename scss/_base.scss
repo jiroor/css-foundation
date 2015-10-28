@@ -1,0 +1,63 @@
+// _base.sass
+
+// html, body
+//
+// * タップ時の色を透明に
+// * 選択状態を許さないように
+//
+// * 基本全要素に対して、box-sizing: border-box;を付与
+//
+// * 基本のフォントサイズ・フォントカラー・背景色の設定
+html, body {
+  @include tap-highlight-color(rgba(0, 0, 0, 0));
+  @include user-select(none);
+}
+
+body, body *, body ::before, body ::after {
+  @include box-sizing(border-box);
+}
+
+html {
+  font-size: $default-font-size-root;
+  background-color: $default-background-color;
+}
+
+body {
+  font-size: $default-font-size-base;
+  color: $default-text-color;
+  font-weight: normal;
+}
+
+
+// a
+//
+// テキストリンクカラーの設定
+//
+// 擬似クラスなし: 通常時
+// :visited  : 訪問済み
+// :active   : ユーザアクション中
+// :hover    : マウスオーバー時
+a {
+  text-decoration: none;
+  @if $default-link-color-base {
+    color: $default-link-color-base;
+  }
+}
+
+a:visited {
+  @if $default-link-color-visited {
+    color: $default-link-color-visited;
+  }
+}
+
+a:active {
+  @if $default-link-color-active {
+    color: $default-link-color-active;
+  }
+}
+
+a:hover {
+  @if $default-link-color-hover {
+    color: $default-link-color-hover;
+  }
+}

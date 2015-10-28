@@ -20,22 +20,27 @@
 //     コンテンツ
 //   </div>
 // </div>
-.c-tab
-  position: relative
+.c-tab {
+  position: relative;
+}
 
-.c-tab__menu
-  @include display(box)
-  @include box-align(start)
-  @include box-sizing(border-box)
-  overflow: hidden
-  z-index: 1
-  position: relative
+.c-tab__menu {
+  @include display(box);
+  @include box-align(start);
+  @include box-sizing(border-box);
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
 
-.c-tab__menu__item
-  @include box-flex(1)
+.c-tab__menu__item {
+  @include box-flex(1);
+}
 
-.c-tab__content
-  display: hidden
+.c-tab__content {
+  display: hidden;
+}
 
-.c-tab__content_state_show
-  display: block
+.c-tab__content_state_show {
+  display: block;
+}

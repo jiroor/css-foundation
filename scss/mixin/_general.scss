@@ -1,0 +1,33 @@
+// _general.sass
+
+// clearfix
+//
+// :after疑似要素を追加する
+//
+// ```
+// @include legacy-pie-clearfix()
+// ```
+@mixin legacy-pie-clearfix() {
+  &::after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+
+// nowrap
+//
+// テキストを三点リーダで省略
+//
+// ```
+// @include text-nowrap()
+// ```
+@mixin text-nowrap() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

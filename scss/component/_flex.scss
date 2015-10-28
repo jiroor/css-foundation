@@ -1,0 +1,77 @@
+// _flex.sass
+
+// flex
+.c-flex {
+  @include display(box);
+
+  &:not(.c-flex-orient_vl) {
+    @include box-pack(center);
+    @include box-align(center);
+  }
+}
+
+
+// flex-orient
+.c-flex {
+  &.c-flex-orient_hl {
+    @include box-orient(horizontal);
+  }
+
+  &.c-flex-orient_vl {
+    @include box-orient(vertical);
+  }
+}
+
+
+// flex-pack
+.c-flex {
+  &.c-flex-pack_start {
+    @include box-pack(start);
+  }
+
+  &.c-flex-pack_center {
+    @include box-pack(center);
+  }
+
+  &.c-flex-pack_end {
+    @include box-pack(end);
+  }
+
+  &.c-flex-pack_justify {
+    @include box-pack(justify);
+  }
+}
+
+
+// flex-align
+.c-flex {
+  &.c-flex-align_start {
+    @include box-align(start);
+  }
+
+  &.c-flex-align_center {
+    @include box-align(center);
+  }
+
+  &.c-flex-align_end {
+    @include box-align(end);
+  }
+
+  &.c-flex-align_stretch {
+    @include box-align(stretch);
+  }
+}
+
+
+// flex-direction
+.c-flex {
+  &.c-flex-dir_reverse {
+    @include box-direction(reverse);
+  }
+}
+
+
+// box-flex
+.c-flex_1 {
+  @include box-flex(1);
+}

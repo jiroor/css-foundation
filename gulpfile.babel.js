@@ -11,3 +11,12 @@ gulp.task('sass', () => {
     .pipe(rename('foundation.min.css'))
     .pipe(gulp.dest('./dst'))
 })
+
+gulp.task('scss', () => {
+  gulp.src('./scss/foundation.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./dst'))
+    .pipe(minify())
+    .pipe(rename('foundation.min.css'))
+    .pipe(gulp.dest('./dst'))
+})

@@ -14,18 +14,21 @@
 //   <div class="c-btn c-dialog__btn-close"></div>
 //   <div class="c-dialog__container">content</div>
 // </div>
-.c-dialog
-  overflow: hidden
-  position: absolute
-  left: 0
-  right: 0
-  margin-left: auto
-  margin-right: auto
+.c-dialog {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.c-dialog__container
-  overflow: hidden
+.c-dialog__container {
+  overflow: hidden;
+}
 
-.c-dialog__btn-close
-  position: absolute
-  right: 0
-  top: 0
+.c-dialog__btn-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

@@ -1,0 +1,32 @@
+// _nav.sass
+
+// pager
+//
+// markup:
+// <nav class="c-pager">
+//   <a class="c-pager__arrow c-pager__arrow_left"></a>
+//   <div class="c-pager__num">
+//     <a class="c-pager__num__item c-pager__num__item_state_active"></a>
+//     <a class="c-pager__num__item"></a>
+//     <a class="c-pager__num__item"></a>
+//   </div>
+//   <a class="c-pager__arrow c-pager__arrow_right"></a>
+// </nav>
+
+.c-pager {
+  @include display(box);
+  @include box-pack(justify);
+}
+
+.c-pager__arrow {
+  display: block;
+}
+
+.c-pager__num {
+  @include display(box);
+}
+
+.c-pager__num__item {
+  display: block;
+  text-align: center;
+}

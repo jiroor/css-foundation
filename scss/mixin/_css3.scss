@@ -1,0 +1,506 @@
+// _css3.sass
+
+// prefix
+//
+// 設定するベンダープレフィックスの指定
+$set-prefix: -webkit-, '';
+
+
+// prefixProp
+//
+// プロパティにベンダープレフィックスを付与する
+//
+// ```
+// @include prefixProp($prop, $value)
+// ```
+@mixin prefixProp($prop, $value...) {
+  @each $prefix in $set-prefix {
+    #{$prefix}#{$prop}: $value;
+  }
+}
+
+
+// prefixValue
+//
+// 値にベンダープレフィックスを付与する
+//
+// ```
+// @include prefixValue($prop, $value)
+// ```
+@mixin prefixValue($prop, $value) {
+  @each $prefix in $set-prefix {
+    #{$prop}: #{$prefix}$value;
+  }
+}
+
+
+// box-sizing
+//
+// ボックスサイズの算出方法を指定する
+// http://www.htmq.com/css3/box-sizing.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css3-boxsizing
+//
+// ```
+// @include box-sizing($arg)
+// ```
+//
+// $arg : content-box(default), border-box, inherit
+@mixin box-sizing($arg) {
+  @include prefixProp(box-sizing, $arg);
+}
+
+
+// display
+//
+// 主に古いFlexibleBox対応用。
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include display($arg)
+// ```
+//
+// $arg : 値がboxである場合は`-webkit-box`になります
+@mixin display($arg) {
+  @if $arg == box {
+    display: -webkit-box;
+  } @else {
+    display: $arg;
+  }
+}
+
+
+// box-align
+//
+// ボックス内の子要素の縦方向の揃え位置を指定する
+// http://www.htmq.com/css3/box-align.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include box-align($arg)
+// ```
+//
+// $arg : start, end, center, baseline, stretch(default)
+@mixin box-align($arg) {
+  @include prefixProp(box-align, $arg);
+}
+
+
+// box-pack
+//
+// ボックス内の子要素の横方向の揃え位置を指定する
+// http://www.htmq.com/css3/box-pack.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include box-pack($arg)
+// ```
+//
+// $arg : start(default), end, center, justify
+@mixin box-pack($arg) {
+  @include prefixProp(box-pack, $arg);
+}
+
+
+// box-orient
+//
+// ボックス内の子要素の配置方向を指定する
+// http://www.htmq.com/css3/box-orient.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include box-orient($arg)
+// ```
+//
+// $arg : horizontal, vertical, inline-axis(default), block-axis, inherit
+@mixin box-orient($arg) {
+  @include prefixProp(box-orient, $arg);
+}
+
+
+// box-direction
+//
+// ボックス内の子要素のレイアウト方向を逆転させる
+// http://www.htmq.com/css3/box-direction.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include box-direction($arg)
+// ```
+//
+// $arg : normal(default), reverse, inherit
+@mixin box-direction($arg) {
+  @include prefixProp(box-direction, $arg);
+}
+
+
+// box-flex
+//
+// 伸縮ボックスの伸縮比率を指定する
+// http://www.htmq.com/css3/box-flex.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=flexbox
+//
+// ```
+// @include box-flex($arg)
+// ```
+//
+// $arg : 要素が伸縮する比率を正の数値で指定する（初期値は0.0）
+@mixin box-flex($arg) {
+  @include prefixProp(box-flex, $arg);
+}
+
+
+// transform
+//
+// 要素に2D変形、または、3D変形を適用する
+// http://www.htmq.com/css3/transform.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=transforms2d
+//
+// ```
+// @include transform($args)
+// ```
+//
+// $args : none(default), transform関数
+@mixin transform($args...) {
+  @include prefixProp(transform, $args);
+}
+
+
+// transform-origin
+//
+// 2D変形、または、3D変形の原点を指定する
+// http://www.htmq.com/css3/transform-origin.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=transforms2d
+//
+// ```
+// @include transform-origin($args)
+// ```
+//
+// $args : パーセンテージ, 長さ, キーワード
+@mixin transform-origin($args...) {
+  @include prefixProp(transform-origin, $args);
+}
+
+
+// transition
+//
+// transition効果（時間的変化）をまとめて指定する
+// http://www.htmq.com/css3/transition.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css-transitions
+//
+// ```
+// @include transition($args)
+// ```
+//
+// $args : 各プロパティの値をスペースで区切って指定
+@mixin transition($args...) {
+  @include prefixProp(transition, $args);
+}
+
+
+// animation
+//
+// アニメーションについてまとめて指定する
+// http://www.htmq.com/css3/animation.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css-animation
+//
+// ```
+// @include animation($args)
+// ```
+//
+// $args : 各プロパティの値をスペースで区切って指定(name, duration, timing-function, delay, iteration-count, direction)
+@mixin animation($args...) {
+  @include prefixProp(animation, $args);
+}
+
+
+// animation-name
+//
+// アニメーション名を指定する
+// http://www.htmq.com/css3/animation-name.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css-animation
+//
+// ```
+// @include animation-name($args)
+// ```
+//
+// $args : none(default) アニメーション名
+@mixin animation-name($args...) {
+  @include prefixProp(animation-name, $args);
+}
+
+
+// animation-duration
+//
+// アニメーション一回分の時間の長さを指定する
+// http://www.htmq.com/css3/animation-duration.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css-animation
+//
+// ```
+// @include animation-duration($arg)
+// ```
+//
+// $arg : 0(default) 時間を指定する（例：5.5秒なら5.5s）
+@mixin animation-duration($arg) {
+  @include prefixProp(animation-duration, $arg);
+}
+
+
+// animation-timing-function
+//
+// アニメーションのタイミング・進行割合を指定する
+// http://www.htmq.com/css3/animation-timing-function.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css-animation
+//
+// ```
+// @include animation-timing-function($arg)
+// ```
+//
+// $arg : ease(default) キーワード, cubic-bezier関数
+@mixin animation-timing-function($arg) {
+  @include prefixProp(animation-timing-function, $arg);
+}
+
+
+// animation-iteration-count
+//
+// アニメーションの繰り返し回数を指定する
+// http://www.htmq.com/css3/animation-iteration-count.shtml
+//
+// ブラウザ対応状況
+// http://caniuse.com/#feat=css-animation
+//
+// ```
+// @include animation-iteration-count($arg)
+// ```
+//
+// $arg : 1(default), infinite(無限), 数値
+@mixin animation-iteration-count($arg) {
+  @include prefixProp(animation-iteration-count, $arg);
+}
+
+
+// tap-highlight-color
+//
+// タップしたときのハイライト表示を指定する
+//
+// Androidには問題があるので承知の上での使用を推奨
+// http://blog.webcreativepark.net/2011/06/09-201210.html
+//
+// ```
+// @include tap-highlight-color($arg)
+// ```
+//
+// $arg : 初期値は端末により異なる。rgbaで指定する
+@mixin tap-highlight-color($arg) {
+  @include prefixProp(tap-highlight-color, $arg);
+}
+
+
+// touch-callout
+//
+// 長タップした時に表示される吹き出し表示を無効にする。（画像なら画像を保存するとか）
+// http://blog.asial.co.jp/iphone/1147
+//
+// Androidは動作しない場合が多い。
+//
+// ```
+// @include touch-callout($arg)
+// ```
+//
+// $arg : default, none, inherit
+@mixin touch-callout($arg) {
+  @include prefixProp(touch-callout, $arg);
+}
+
+
+// user-select
+//
+// 選択操作を無効にする。
+// https://developer.mozilla.org/ja/docs/Web/CSS/user-select
+//
+// 仕様から外れているため、ブラウザの対応には差がある。
+// 今対応していてもバージョンアップでなくなる可能性が高いのでなるべく使わない方がいいでしょう。
+//
+// ```
+// @include user-select($arg)
+// ```
+//
+// $arg : none, text, all, element
+@mixin user-select($arg) {
+  @include prefixProp(user-select, $arg);
+}
+
+
+// appearance
+//
+// プラットフォームにおける標準的なUIの外観にする
+// http://www.htmq.com/css3/appearance.shtml
+//
+// buttonをradioにすることもできるが、もっぱらnoneで初期化する為に使われるプロパティです。
+//
+// ```
+// @include appearance($arg)
+// ```
+//
+// $arg : none ほか キーワード
+@mixin appearance($arg) {
+  @include prefixProp(appearance, $arg);
+}
+
+
+// linear-gradient-background
+//
+// 新旧仕様に対応させたbackground-image: linear-gradientを出力する
+//
+// Ultimate CSS Gradient GeneratorのSCSSで、background-imageに渡しているものに`-background`を付ければおk。
+// http://www.colorzilla.com/gradient-editor/
+//
+// ```
+// @include linear-gradient-background(top, #63604a 0%, #a6a389 50%, #63604a 100%)
+// ```
+@mixin linear-gradient-background($start, $stops...) {
+  background-image: unquote('-webkit-gradient(linear, ' + convert-gradient-orientation($start, 'webkit') + ',' + normalize-stops($stops) + ')');
+  background-image: unquote('-webkit-linear-gradient(' + $start + ',' + $stops + ')');
+  background-image: unquote('linear-gradient(' + convert-gradient-orientation($start, 'original') + ',' + $stops + ')');
+}
+
+
+// linear-gradient-border-image
+//
+// 新旧仕様に対応させたborder-image: linear-gradientを出力する
+//
+// Ultimate CSS Gradient GeneratorのSCSSで、background-imageに渡しているものに`-border-image`を付ける。
+// 第二引数にborder-imageのsource以外の指定を追加する。
+// http://www.colorzilla.com/gradient-editor/
+//
+// ```
+// @include linear-gradient-border-image(top, 5 round, #63604a 0%, #a6a389 50%, #63604a 100%)
+// ```
+@mixin linear-gradient-border-image($start, $opt, $stops...) {
+  -webkit-border-image: unquote('-webkit-gradient(linear, ' + convert-gradient-orientation($start, 'webkit') + ',' + normalize-stops($stops) + ')') $opt;
+  -webkit-border-image: unquote('-webkit-linear-gradient(' + $start + ',' + $stops + ')') $opt;
+  border-image: unquote('linear-gradient(' + convert-gradient-orientation($start, 'original') + ',' + $stops + ')') $opt;
+}
+
+
+// stripe-gradient
+//
+// ストライプ背景
+//
+// `$style` --- ストライプのスタイル。デフォルト left top
+// `$color1` --- ストライプカラー１。最初の色。デフォルトはrgba(255,255,255,0.1)
+// `$color2` --- ストライプカラー２。２番目の色。デフォルトはrgba(255,255,255,0)
+//
+// ```
+// @include stripe-gradient-background(-45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))
+// ```
+@mixin stripe-gradient-background($style: -45deg, $color1: rgba(255, 255, 255, 0.1), $color2: rgba(255, 255, 255, 0)) {
+  @include linear-gradient-background($style, $color1 0%, $color1 25%, $color2 26%, $color2 50%, $color1 51%, $color1 75%, $color2 76%, $color2 100%);
+}
+
+
+/**
+ * Normalize color stops:
+ *
+ *   - (color pos) -> (pos color)
+ *   - (color) -> (implied-pos color)
+ *
+ * nibから拝借
+ */
+@function normalize-stops($stops) {
+  $str: $stops;
+  @for $i from 1 through length($stops) {
+    $stop: nth($stops, $i);
+    @if type-of($stop) == color {
+      $str: set-nth($str, $i, unquote('color-stop(' + pos-in-stops($i, $stops) + ',' + $stop + ')'));
+    } @else if type-of($stop) == list {
+      $str: set-nth($str, $i, unquote('color-stop(' + nth($stop, 2) + ',' + nth($stop, 1) + ')'));
+    }
+  }
+  @return $str;
+}
+
+
+/**
+ * Implicit color stop position.
+ *
+ * nibから拝借
+ */
+@function pos-in-stops($i, $stops) {
+  $len: length($stops);
+  @if $len == $i {
+    @return 100%;
+  } @else if $i > 1 {
+    @return (($i - 1) / ($len - 1) * 100) + 0%;
+  } @else {
+    @return 0;
+  }
+}
+
+
+/**
+ * グラデーションのstart指定を変換する
+ */
+@function convert-gradient-orientation($start, $type: null) {
+  @if $type == 'webkit' {
+    @if $start == 'top' or 'to bottom' {
+      @return 'left top, left bottom';
+    } @else if $start == '-45deg' {
+      @return 'left top';
+    } @else if $start == 'left' {
+      @return 'left top, right bottom';
+    } @else {
+      @return $start;
+    }
+  } @else if $type == 'original' {
+    @if $start == 'top' {
+      @return 'to bottom';
+    } @else if $start == '-45deg' {
+      @return 135deg;
+    } @else if $start == 'left' {
+      @return 'to right';
+    } @else {
+      @return $start;
+    }
+  } @else {
+    @return $start;
+  }
+}
+
+
+// text-outline
+//
+// text-shadowでアウトラインを付ける
+//
+// `$color` --- アウトラインの色
+@mixin text-outline($color, $w: 1px, $b: 0) {
+  text-shadow: 0 $w $b $color, 0 -$w $b $color, $w 0 $b $color, -$w 0 $b $color, $w $w $b $color, -$w -$w $b $color, $w -$w $b $color, -$w $w $b $color;
+}
